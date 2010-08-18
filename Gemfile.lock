@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.0.rc)
     arel (0.4.0)
       activesupport (>= 3.0.0.beta)
+    awesome_print (0.2.1)
     bson (1.0.4)
     bson_ext (1.0.4)
     builder (2.1.2)
@@ -80,6 +81,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bson_ext (>= 1.0.4)
   mongoid (>= 2.0.0.beta.16)
   rails (= 3.0.0.rc)

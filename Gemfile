@@ -9,6 +9,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mongoid', '>= 2.0.0.beta.16'
 gem 'bson_ext', '>= 1.0.4'
 
+gem 'awesome_print', :require => 'ap'
+
 # Use unicorn as the web server
 #gem 'unicorn'
 

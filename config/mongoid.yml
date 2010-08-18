@@ -1,4 +1,4 @@
-  defaults: &defaults
+defaults: &defaults
   host: localhost
   # slaves:
   #   - host: slave1.local
