@@ -1,0 +1,5 @@
+<b><%= observable.name %></b>
+<% if observable.notes.present? %>
+  <br/><%= observable.notes %>
+<% end %>
+<%= render :partial => 'observables', :locals => {:observables => observable.observables} %>

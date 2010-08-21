@@ -20,5 +20,11 @@
   <%= @inspection.finished_at %>
 </p>
 
+<% if @inspection.observables.present? %>
+  <%= render :partial => 'observables', :locals => {:observables => @inspection.observables} %>
+<% else %>
+  <p>No observables for this inspection.</p>
+<% end %>
+
 <%= link_to 'Edit', edit_inspection_path(@inspection) %> |
 <%= link_to 'Back', inspections_path %>

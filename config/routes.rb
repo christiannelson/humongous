@@ -1,5 +1,7 @@
 Humongous::Application.routes.draw do
 
+  root :to => 'inspections#index'
+
   resources :inspections
 
   # The priority is based upon order of creation:

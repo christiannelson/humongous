@@ -10,9 +10,10 @@ gem 'mongoid', '>= 2.0.0.beta.16'
 gem 'bson_ext', '>= 1.0.4'
 
 gem 'awesome_print', :require => 'ap'
+gem 'faker'
 
 # Use unicorn as the web server
-#gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'

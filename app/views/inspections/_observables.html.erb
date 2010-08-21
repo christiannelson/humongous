@@ -1,0 +1,9 @@
+<% if observables.present? %>
+  <ul>
+    <% observables.each do |observable| %>
+      <li>
+        <%= render :partial => 'observable', :locals => {:observable => observable} %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
