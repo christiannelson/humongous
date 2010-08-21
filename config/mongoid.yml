@@ -14,10 +14,10 @@ test:
   <<: *defaults
   database: humongous_test
 
-# set these environment variables on your prod server
 production:
-  <<: *defaults
-  database: humongous_production
+#  <<: *defaults
+  uri: ENV['MONGOHQ_URL']
+#  database: humongous_production
 #  host: <%= ENV['MONGOID_HOST'] %>
 #  port: <%= ENV['MONGOID_PORT'] %>
 #  username: <%= ENV['MONGOID_USERNAME'] %>
