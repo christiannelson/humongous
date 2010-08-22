@@ -12,5 +12,8 @@ class Inspection
   embeds_many :observables
 
   index :finished_at
-  
+
+  def total_observables_count
+    observables.count + observables.collect { |o| o.total_observables_count }.sum
+  end
 end

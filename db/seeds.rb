@@ -49,9 +49,10 @@ def create_inspections(count = 50)
     spaces_names = SPACES.keys.randomly_pick(3 + rand(SPACES.keys.length - 3))
 
     spaces_names.each do |name|
-      o = inspection.observables.build(:name => name, :notes => Faker::Lorem.sentence(rand(8)))
+      o = inspection.observables.build(:name => name, :notes => Faker::Lorem.sentence(1 + rand(9)))
       (DEFAULT_ITEMS + SPACES[name]).each do |item|
-        o.observables.build(:name => item, :notes => Faker::Lorem.sentence(rand(6)))
+        i = o.observables.build(:name => item, :notes => Faker::Lorem.sentence(1 + rand(9)))
+        i.condition = Observable::CONDITIONS[rand(Observable::CONDITIONS.length)] if rand(10) > 4
       end
     end
 

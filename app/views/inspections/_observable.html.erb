@@ -1,4 +1,7 @@
 <b><%= observable.name %></b>
+<% if observable.condition.present? %>
+   [<%= observable.condition.capitalize %>]
+<% end %>
 <% if observable.notes.present? %>
   <br/><%= observable.notes %>
 <% end %>
