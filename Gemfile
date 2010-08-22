@@ -8,9 +8,13 @@ gem 'rails', '3.0.0.rc'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mongoid', '>= 2.0.0.beta.16'
 gem 'bson_ext', '>= 1.0.4'
-
 gem 'awesome_print', :require => 'ap'
 gem 'faker'
+
+group :test, :development do
+  gem 'rspec-rails', '>= 2.0.0.beta.19'
+  gem 'mongoid-rspec'
+end
 
 # Use unicorn as the web server
 gem 'unicorn'

@@ -7,6 +7,8 @@ class Inspection
   field :finished_at, :type => Time
   field :total_observables, :type => Integer
 
+  attr_protected :total_observables
+
   validates :name, :presence => true
 
   embeds_one :address
@@ -25,5 +27,4 @@ class Inspection
   def count_observables(observable)
     observable.observables.collect { |o| count_observables(o) }.sum + 1
   end
-
 end
