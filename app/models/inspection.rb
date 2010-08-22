@@ -8,5 +8,9 @@ class Inspection
 
   validates :name, :presence => true
 
+  embeds_one :address
   embeds_many :observables
+
+  index :finished_at
+  
 end

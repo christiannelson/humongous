@@ -3,8 +3,8 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Notes</th>
-    <th>Started at</th>
+    <!--<th>Notes</th>-->
+    <!--<th>Started at</th>-->
     <th>Finished at</th>
     <th></th>
     <th></th>
@@ -14,8 +14,8 @@
 <% @inspections.each do |inspection| %>
   <tr>
     <td><%= inspection.name %></td>
-    <td><%= inspection.notes %></td>
-    <td><%= inspection.started_at %></td>
+    <!--<td><%= truncate(inspection.notes, :length => 30) %></td>-->
+    <!--<td><%= inspection.started_at %></td>-->
     <td><%= inspection.finished_at %></td>
     <td><%= link_to 'Show', inspection %></td>
     <td><%= link_to 'Edit', edit_inspection_path(inspection) %></td>

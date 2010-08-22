@@ -2,7 +2,7 @@ class InspectionsController < ApplicationController
   # GET /inspections
   # GET /inspections.xml
   def index
-    @inspections = Inspection.all
+    @inspections = Inspection.asc(:finished_at).all
 
     respond_to do |format|
       format.html # index.html.erb
