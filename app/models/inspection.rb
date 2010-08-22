@@ -5,6 +5,7 @@ class Inspection
   field :notes, :type => String
   field :started_at, :type => Time
   field :finished_at, :type => Time
+  field :total_observables, :type => Integer
 
   validates :name, :presence => true
 
@@ -13,7 +14,16 @@ class Inspection
 
   index :finished_at
 
-  def total_observables_count
-    observables.count + observables.collect { |o| o.total_observables_count }.sum
+  before_save :calculate_total_observables
+
+  private
+  
+  def calculate_total_observables
+    self.total_observables = observables.collect { |o| count_observables(o) }.sum
   end
+
+  def count_observables(observable)
+    observable.observables.collect { |o| count_observables(o) }.sum + 1
+  end
+
 end

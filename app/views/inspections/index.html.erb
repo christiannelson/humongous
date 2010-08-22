@@ -15,7 +15,7 @@
 <% @inspections.each do |inspection| %>
   <tr>
     <td><%= inspection.name %></td>
-    <td><%= inspection.total_observables_count %></td>
+    <td><%= inspection.total_observables %></td>
     <!--<td><%= truncate(inspection.notes, :length => 30) %></td>-->
     <!--<td><%= inspection.started_at %></td>-->
     <td><%= inspection.finished_at %></td>

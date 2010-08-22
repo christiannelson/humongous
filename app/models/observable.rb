@@ -13,8 +13,4 @@ class Observable
   embedded_in :inspection, :inverse_of => :observables
   embeds_many :observables
   embedded_in :observable, :inverse_of => :observables
-
-  def total_observables_count
-    observables.count + observables.collect { |o| o.total_observables_count }.sum
-  end
 end
