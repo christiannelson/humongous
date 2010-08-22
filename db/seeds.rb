@@ -1,7 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-
 class Array
   # If +number+ is greater than the size of the array, the method
   # will simply return the array itself sorted randomly
@@ -19,24 +18,24 @@ DEFAULT_ITEMS = [
 ]
 
 SPACES = {
-  'Living Room' => [],
+  'Living Room' => ['Fireplace'],
   'Kitchen' => ['Stove', 'Oven', 'Microwave', 'Sink', 'Disposal', 'Refridgerator', 'Counters', 'Dish Washer'],
-  'Bathroom' => ['Sink', 'Toilet', 'Tub', 'Shower'],
+  'Bathroom' => ['Sink', 'Toilet', 'Tub', 'Shower', 'Grounded Outlets'],
   'Master Bedroom' => ['Closet'],
-  'Dining Room' => [],
+  'Dining Room' => ['Built-ins'],
   'Hallway' => [],
   'Sun room' => [],
   'Office' => [],
-  'Pantry' => ['Shelves'],
+  'Pantry' => ['Shelves', 'Cabinets'],
   'Side Bedroom' => ['Closet'],
   'Garage' => ['Door', 'Opener'],
   'Back Bedroom' => ['Closet'],
-  'Attic' => [],
+  'Attic' => ['Ventilation'],
   'Storage' => ['Shelves'],
   'Kids Bedroom' => ['Closet'],
-  'Laundry' => ['Washer', 'Dryer', 'Sink'],
-  'Hallway' => [],
+  'Laundry' => ['Washer', 'Dryer', 'Sink', 'Ventilation'],
   'Foyer' => [],
+  'Cellar' => ['Stairs'],
   'Fainting Room' => []
 }
 
