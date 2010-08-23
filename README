@@ -4,7 +4,7 @@ This application is a little experiment to see what all the fuss over mongo db i
 
 == Installing MongoDB on Mac OS X
 
-This application requires Mongo DB to be installed and running on localhost.  Thankfully
+This application requires mongod to be installed and running on localhost.  Thankfully
 this is quite easy if you're using port (or brew).  I use port and this is what it takes:
 
 $ sudo port install mongodb
@@ -50,7 +50,19 @@ $ ab -c 10 -n 500 http://0.0.0.0:8080/
 
 Repeat for one of the larger inspection's show action as well.  On my laptop:
 
-c = 10 index 11.7 req/s
-c = 10 show  27.0 req/s
-c = 1  index 152.0 ms per request
-c = 1  show  67.4 ms per request
+c = 10: index 11.7 req/s
+c = 10: show  27.0 req/s
+c = 1:  index 152.0 ms per request
+c = 1:  show  67.4 ms per request
+
+To see how much time it takes to get the data from mongo, I tweaked the controller so
+that it would access the inspection (or all inspections for index), but then simply
+render a text response and bypass the erbs.  Look here:
+
+c = 10: index 12.8 req/s
+c = 10: show  257.5 req/s (holy jesus!)
+c = 1:  index 127.6 ms per request
+c = 1:  show  6.434 ms per request (and mary too!)
+
+Index isn't much faster, but show is way-way-way faster.  Rendering partials recursively
+is brutal in rails (apparently).
