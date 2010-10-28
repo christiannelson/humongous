@@ -29,7 +29,9 @@ RSpec.configure do |config|
   # instead of true.
   #config.use_transactional_fixtures = true
 
-  #config.after :all do
-  #  Mongoid.master.collections.each(&:drop)
-  #end
+  config.after :suite do
+    Mongoid.master.collections.select do |collection|
+      collection.name !~ /system/
+    end.each(&:drop)
+  end
 end
