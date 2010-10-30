@@ -61,4 +61,4 @@ end
 
 Inspection.destroy_all
 
-create_inspections(ENV['COUNT'] || 50)
+create_inspections((ENV['COUNT'] && ENV['COUNT'].to_i) || 50)
