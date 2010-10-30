@@ -18,8 +18,9 @@ test:
 
 production:
   <<: *defaults
-  uri: <%= ENV['MONGOHQ_URL'] %>
-#  database: humongous_production
+  host: localhost
+  database: humongous_production
+#  uri: <%= ENV['MONGOHQ_URL'] %>
 #  host: <%= ENV['MONGOID_HOST'] %>
 #  port: <%= ENV['MONGOID_PORT'] %>
 #  username: <%= ENV['MONGOID_USERNAME'] %>
