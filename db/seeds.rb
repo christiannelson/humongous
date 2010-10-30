@@ -39,7 +39,7 @@ SPACES = {
   'Fainting Room' => []
 }
 
-def create_inspections(count = 50)
+def create_inspections(count)
   count.times do |i|
     inspection = Inspection.new(:notes => Faker::Lorem.sentence(10), :started_at => (5*count+rand(count)).minutes.ago, :finished_at => (4*count+rand(count)).minutes.ago)
     inspection.build_address(:street => Faker::Address.street_address, :city => Faker::Address.city, :zip => Faker::Address.zip_code)
@@ -61,4 +61,4 @@ end
 
 Inspection.destroy_all
 
-create_inspections(50)
+create_inspections(ENV['COUNT'] || 50)
