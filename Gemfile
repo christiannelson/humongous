@@ -5,7 +5,6 @@ gem 'mongoid', :git => 'http://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'faker'
 gem 'will_paginate'
-#gem 'rack-bug'
 
 gem 'unicorn'
 
