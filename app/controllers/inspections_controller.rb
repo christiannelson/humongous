@@ -1,7 +1,5 @@
 class InspectionsController < ApplicationController
   def index
-    #@inspections = Inspection.desc(:finished_at).all
-
     @inspections = Inspection.desc(:finished_at).paginate :page => params[:page], :per_page => 50
     #render :text => "index page: #{@inspections.collect { |i| i.total_observables }.sum} total observables for #{@inspections.length} inspections"
   end
